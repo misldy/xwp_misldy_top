@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 加载页面头 -->
+    <title>{% block title %}base{% endblock %}</title>
+    <!-- 加载bootstrap css样式 -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- 加载APP的CSS样式 -->
+    {% block css %}{% endblock css %}
+    <!-- 加载吐司样式 -->
+    {% comment %} <link rel="stylesheet" href="{% static 'toastr/css/toastr.min.css' %}"> {% endcomment %}
+</head>
+<body>
+    <!-- 加载头文件 -->
+    {% include 'header.html' %}
+    <!-- 加载页面内容 -->
+    {% block content %}{% endblock content %}
+    <!-- 加载底部文件 -->
+    {% include 'footer.html' %}
+    <!-- 加载jqueryJS文件 -->
+    <script src="{% static 'jquery/js/jquery.min.js' %}"></script>
+    <!-- 加载bootstrap css文件 -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- 加载吐司JS文件 -->
+    <script src="{% static 'toastr/js/toastr.min.js' %}"></script>
+    <!-- 加载吐司配置文件 -->
+    <script src="{% static 'toastr/js/toastr.config.js' %}"></script>
+    <!-- 加载APP的js文件 -->
+    {% block js %}{% endblock js %}
+</body>
+</html>

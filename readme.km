@@ -1,0 +1,46 @@
+{
+    "root": {
+        "data": {
+            "id": "chi2p7tfxgg0",
+            "created": 1643450837149,
+            "text": "misldy.top"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "chimm68bl200",
+                    "created": 1643507020801,
+                    "text": "首页"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "chimm8hv0vs0",
+                    "created": 1643507025732,
+                    "text": "用户管理"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "chimmeuakio0",
+                    "created": 1643507039544,
+                    "text": "博客"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "chimmhbqm3k0",
+                    "created": 1643507044953,
+                    "text": "工具"
+                },
+                "children": []
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

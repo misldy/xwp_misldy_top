@@ -1,0 +1,32 @@
+{% extends 'tools/tools_base.html' %}
+
+{% load static %}
+
+{% block title %}摩斯电码|摩斯密码{% endblock %}
+
+{% block content %}
+    {% include 'tools/aside.html' %}
+    <main>
+        <div class="container">
+            <h1>摩斯电码</h1>
+            <label for="area_input"></label><textarea id="area_input" class="textarea mt-2" rows="15" placeholder="支持中文的摩斯电码"
+                                                      onpaste="setTimeout(encode, 1)"></textarea>
+            <div class="content-center mt-2">
+                <button class="button" onclick="encode()">
+                    <i class="fa fa-arrow-down"></i>
+                    <span>编码</span>
+                </button>
+                <button class="button" onclick="decode()">
+                    <i class="fa fa-arrow-up"></i>
+                    <span>解码</span>
+                </button>
+                <button class="button" onclick="cleanup()">清空</button>
+            </div>
+            <label for="area_output"></label><textarea id="area_output" class="textarea mt-2" rows="15" onpaste="setTimeout(decode, 1)"></textarea>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'tools/js/morse.js' %}"></script>
+{% endblock %}

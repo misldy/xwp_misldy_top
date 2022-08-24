@@ -1,0 +1,45 @@
+<aside>
+{#    <h1 class="logo"><a href="/">OKTools</a></h1>#}
+    <nav class="side-nav">
+        <p>JSON</p>
+        <ul>
+            <li><a href="{% url 'tools:json' %}">JSON格式化</a></li>
+            <li><a href="{% url 'tools:json_to_xml' %}">JSON/XML转换</a></li>
+            <li><a href="{% url 'tools:json_to_yaml' %}">JSON/YAML转换</a></li>
+            <li><a href="{% url 'tools:json_to_go' %}">JSON转Go Struct</a></li>
+        </ul>
+        <p>Base64</p>
+        <ul>
+            <li><a href="{% url 'tools:base64' %}">Base64编码解码</a></li>
+            <li><a href="{% url 'tools:image_to_base64' %}">图片Base64编码</a></li>
+        </ul>
+        <p>转换</p>
+        <ul>
+            <li><a href="{% url 'tools:timestamp' %}">Unix时间戳</a></li>
+            <li><a href="{% url 'tools:color' %}">颜色值转换</a></li>
+            <li><a href="{% url 'tools:number' %}">进制转换</a></li>
+            <li><a href="{% url 'tools:url' %}">URL编码解码</a>
+            <li><a href="{% url 'tools:unicode' %}">Unicode编码转换</a></li>
+            <li><a href="{% url 'tools:pdf2img' %}">PDF转图片</a></li>
+            <li><a href="{% url 'tools:morse' %}">摩斯电码</a></li>
+        </ul>
+        <p>Hash</p>
+        <ul>
+            <li><a href="{% url 'tools:hash' %}">Hash计算</a></li>
+            <li><a href="{% url 'tools:file_hash' %}">文件Hash计算</a></li>
+        </ul>
+        <p>加密</p>
+        <ul>
+            <li><a href="{% url 'tools:aes' %}">AES加密解密</a></li>
+            <li><a href="{% url 'tools:des' %}">DES加密解密</a></li>
+            <li><a href="{% url 'tools:rsa' %}">RSA加密解密</a></li>
+        </ul>
+        <p>其他</p>
+        <ul>
+            <li><a href="{% url 'tools:tinyimg' %}">图片压缩</a></li>
+            <li><a href="{% url 'tools:qrcode' %}">二维码制作</a></li>
+            <li><a href="#" onclick="hrefForNoTLS('/websocket')">WebSocket测试</a></li>
+            <li><a href="{% url 'tools:regex' %}">正则表达式测试</a></li>
+        </ul>
+    </nav>
+</aside>

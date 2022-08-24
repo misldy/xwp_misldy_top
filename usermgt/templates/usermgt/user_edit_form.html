@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}用户登录{% endblock %}
+{% comment %} {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/ylogin/css/login.css' %}">
+{% endblock %} {% endcomment %}
+
+{% block content %}
+{% comment %} {% if user.is_authenticated %}
+<form method="post" action="{% url 'usermgt:edit' user_id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-default" type="submit" value="Update" />
+</form>
+{% endif %} {% endcomment %}
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'usermgt:edit' question.user_id %}">{{ question.user_id }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'tools/tools_base.html' %}
+
+{% load static %}
+
+{% block title %}json格式化工具{% endblock %}
+
+{% block content %}
+    {% include 'tools/aside.html' %}
+    <main>
+        <div class="container">
+            <h1>Unix时间戳</h1>
+            <div class="flex mt-2">
+                <div class="group" style="margin-right:1em;flex-shrink: 2">
+                    <span class="static">当前时间</span>
+                    <label for="time_now"></label><input id="time_now" class="input text-info">
+                    <label for="select_now_unit"></label><select id="select_now_unit" class="select" onchange="updateTime()">
+                        <option value="s">秒</option>
+                        <option value="ms">毫秒</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <button class="button primary" onclick="startUpdate(this)">开始</button>
+                    <button class="button" onclick="stopUpdate(this)">停止</button>
+                    <button class="button" onclick="updateTime()">刷新</button>
+                </div>
+            </div>
+            <div class="group mt-2">
+                <span class="static">Unix时间戳</span>
+                <label for="input_time"></label><input id="input_time" class="input inline" type="text" onpaste="setTimeout(timeToDate, 1)">
+                <label for="select_input_unit"></label><select id="select_input_unit" class="select" onchange="timeToDate()">
+                    <option value="s">秒</option>
+                    <option value="ms">毫秒</option>
+                </select>
+                <button class="button primary" onclick="timeToDate()">转换</button>
+                <label for="output_date"></label><input id="output_date" class="input inline" type="text">
+            </div>
+            <br>
+            <div class="group mt-2">
+                <span class="static">北京时间</span>
+                <label for="input_date"></label><input id="input_date" class="input inline" type="text" onpaste="setTimeout(dateToTime, 1)">
+                <button class="button primary" onclick="dateToTime()">转换</button>
+                <label for="output_time"></label><input id="output_time" class="input inline" type="text">
+                <label for="select_output_unit"></label><select id="select_output_unit" class="select" onchange="dateToTime()">
+                    <option value="s">秒</option>
+                    <option value="ms">毫秒</option>
+                </select>
+            </div>
+            <h3 class="mt-2">在编程语言中获取Unix时间戳：</h3>
+            <table class="table striped fullwidth mt-2">
+                <thead>
+                <tr>
+                    <th>语言</th>
+                    <th>秒</th>
+                    <th>毫秒</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Math.round(new Date() / 1000)</td>
+                    <td>new Date().getTime()</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>System.currentTimeMillis() / 1000</td>
+                    <td>System.currentTimeMillis()</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>int(time.time())</td>
+                    <td>int(time.time() * 1000)</td>
+                </tr>
+                <tr>
+                    <td>Go</td>
+                    <td>time.Now().Unix()</td>
+                    <td>time.Now().UnixNano() / 1e6</td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td>time()</td>
+                    <td>(int)(microtime(true) * 1000)</td>
+                </tr>
+                <tr>
+                    <td>Ruby</td>
+                    <td>Time.now.to_i</td>
+                    <td>(Time.now.to_f * 1000).to_i</td>
+                </tr>
+                <tr>
+                    <td>C#</td>
+                    <td>DateTimeOffset.UtcNow.ToUnixTimeSeconds()</td>
+                    <td>DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()</td>
+                </tr>
+                <tr>
+                    <td>Swift</td>
+                    <td>NSDate().timeIntervalSince1970</td>
+                    <td>NSDate().timeIntervalSince1970 * 1000</td>
+                </tr>
+                <tr>
+                    <td>Objective-C</td>
+                    <td>[[NSDate date] timeIntervalSince1970]</td>
+                    <td>[[NSDate date] timeIntervalSince1970] * 1000</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'tools/js/timestamp.js' %}"></script>
+{% endblock %}

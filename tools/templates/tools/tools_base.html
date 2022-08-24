@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 加载页面头 -->
+    <title>{% block title %}base{% endblock %}</title>
+    <!-- 加载icon -->
+    <link rel="shortcut icon" href="{% static 'tools/favicon.ico' %}">
+    <!-- 加载文件css样式 -->
+    <link rel="stylesheet" href="{% static 'tools/css/style.css' %}" type="text/css">
+    <link href="{% static 'tools/css/font-awesome/5.10.0-11/css/all.min.css' %}" rel="stylesheet">
+    <!-- 加载APP的CSS样式 -->
+    {% block css %}{% endblock css %}
+
+</head>
+<body>
+    <!-- 加载页面内容 -->
+    {% block content %}{% endblock content %}
+    <!-- 加载APP的js文件 -->
+    {% block js %}{% endblock js %}
+</body>
+</html>
