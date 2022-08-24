@@ -1,0 +1,26 @@
+# pycharm 注释
+.idea/
+.DS_Store
+
+# vscode 注释
+.vscode/
+venv/
+
+# python默认的缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+ 
+#Django stuff
+local_settings.py
+*.sqlite3
+ 
+# database migrations 数据库迁移记录,!除文件外
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# 配置文件
+uwsgi.ini
+
+# GIT文件
+.git/
